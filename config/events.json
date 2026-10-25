@@ -1,0 +1,41 @@
+{
+  "_comment": "aliases: any spelling (as a tag key: lowercase letters and digits only) -> the event name shown. folders: corrections for one top-level folder. notShoots: folders that group several shoots, so they never get one packaging.",
+  "aliases": {
+    "tasteofdubai": "Taste of Dubai",
+    "tasteofabudhabi": "Taste of Abu Dhabi",
+    "cluckflame": "Cluck & Flame",
+    "clucknflame": "Cluck & Flame",
+    "burgerday": "Burger Day",
+    "surfturf": "Surf & Turf",
+    "flankdinner": "Flank Dinner",
+    "omdinner": "OM Dinner",
+    "april24dinner": "April 2024 Dinner",
+    "uruguayevent": "Uruguay Event",
+    "sbdocumentary": "SB Documentary",
+    "oldad": "Old Ads",
+    "aramtec3meat": "Aramtec 3 Meats",
+    "frbbqmfav": "FRBBQM FAV",
+    "mccain": "McCain"
+  },
+  "folders": {
+    "1207": {
+      "date": "2026-07-12"
+    },
+    "2410": {
+      "date": "2025-10-24"
+    }
+  },
+  "notShoots": [
+    "Photos Historique",
+    "ASSETS",
+    "BOTTLES TRANSPARENT",
+    "TASTE-OF-ABU-DHABI",
+    "TASTE-OF-DUBAI",
+    "MELT",
+    "Archives"
+  ],
+  "newPackaging": {
+    "from": "2025-09",
+    "note": "New packaging launched September 2025 (Gabriel, 25/10/2026). Shoots before = old, after September = new, September itself = AI or manual."
+  }
+}

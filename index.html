@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Smoking Beards Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script type="module" src="js/app.js"></script>
+</head>
+<body>
+
+<!-- Sign-in screen -->
+<section id="signin" class="signin">
+  <div class="signin-card">
+    <div class="brand-mark">SB</div>
+    <h1>Smoking Beards Library</h1>
+    <p>Photos and videos for the Smoking Beards brand. Sign in with the Google account that has access.</p>
+    <button id="signin-btn" class="btn primary big">Sign in with Google</button>
+    <p id="signin-msg" class="muted small"></p>
+    <p class="muted small">First time: Google may say the app is not verified. Click <b>Advanced</b>, then <b>Go to Smoking Beards Library</b>.</p>
+    <p class="small"><a href="privacy.html">Privacy</a></p>
+  </div>
+</section>
+
+<!-- Main app -->
+<div id="app" class="app" hidden>
+  <aside id="sidebar" class="sidebar">
+    <div class="side-head">
+      <div class="brand-mark sm">SB</div>
+      <div class="side-title">Library</div>
+      <button class="icon-btn only-mobile" data-act="close-sidebar" aria-label="Close">&times;</button>
+    </div>
+    <nav id="views" class="side-section"></nav>
+    <div class="side-section">
+      <div class="side-label">Folders</div>
+      <div id="tree" class="tree"></div>
+    </div>
+    <div id="facets" class="side-section"></div>
+    <div class="side-foot">
+      <div id="who" class="muted small"></div>
+      <button class="link" data-act="signout">Sign out</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="icon-btn only-mobile" data-act="open-sidebar" aria-label="Browse">&#9776;</button>
+      <div class="search">
+        <div id="chips" class="chips"></div>
+        <input id="q" type="search" autocomplete="off" placeholder="Search tags, events, formats. Try: Fred + Ribeye + vertical" aria-label="Search">
+        <div id="suggest" class="suggest" hidden></div>
+      </div>
+      <div class="admin-only top-actions">
+        <button class="btn" data-act="new-folder">New folder</button>
+        <button class="btn primary" data-act="upload">Upload</button>
+        <button class="btn" data-act="access">Access</button>
+      </div>
+    </header>
+
+    <div class="subbar">
+      <div class="subbar-left"><div id="crumbs" class="crumbs"></div><div id="era" class="era" hidden></div></div>
+      <div class="subbar-right">
+        <span id="count" class="muted small"></span>
+        <button class="link small" data-act="select-all">Select all</button>
+        <select id="groupby" aria-label="Group by">
+          <option value="none">No grouping</option>
+          <option value="action">Group by action</option>
+          <option value="content">Group by content</option>
+          <option value="type">Group by content type</option>
+          <option value="event">Group by event</option>
+          <option value="shape">Group by format</option>
+        </select>
+        <select id="sort" aria-label="Sort">
+          <option value="new">Newest first</option>
+          <option value="old">Oldest first</option>
+          <option value="name">Name</option>
+          <option value="long">Longest videos</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="status" class="status" hidden></div>
+    <div id="grid" class="grid"></div>
+    <div id="more" class="more"></div>
+  </main>
+</div>
+
+<!-- Bulk action bar -->
+<div id="bulk" class="bulk" hidden>
+  <span id="bulk-count"></span>
+  <button class="btn ghost-dark" data-act="download">Download</button>
+  <span class="admin-only bulk-admin">
+    <button class="btn ghost-dark" data-act="bulk-tag" title="T">Add tag</button>
+    <button class="btn ghost-dark" data-act="bulk-untag">Remove tag</button>
+    <button class="btn ghost-dark" data-act="bulk-confirm" title="C">Confirm AI</button>
+    <span class="pkg-set">
+      <span class="muted-dark small">Packaging</span>
+      <button class="btn ghost-dark" data-act="pkg" data-pkg="new" title="1">New</button>
+      <button class="btn ghost-dark" data-act="pkg" data-pkg="old" title="2">Old</button>
+      <button class="btn ghost-dark" data-act="pkg" data-pkg="none" title="3">None</button>
+    </span>
+  </span>
+  <button class="icon-btn dark" data-act="clear-selection" aria-label="Clear selection">&times;</button>
+</div>
+
+<!-- Detail view -->
+<div id="detail" class="overlay" hidden>
+  <div class="detail">
+    <div class="detail-media" id="detail-media"></div>
+    <div class="detail-info" id="detail-info"></div>
+    <button class="icon-btn detail-close" data-act="close-detail" aria-label="Close">&times;</button>
+    <button class="nav-btn prev" data-act="prev" aria-label="Previous">&#8249;</button>
+    <button class="nav-btn next" data-act="next" aria-label="Next">&#8250;</button>
+  </div>
+</div>
+
+<!-- Generic dialog (upload, access, tag picker) -->
+<div id="dialog" class="overlay" hidden><div class="dialog" id="dialog-body"></div></div>
+
+<div id="toast" class="toast" hidden></div>
+</body>
+</html>
